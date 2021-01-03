@@ -1,0 +1,182 @@
+body{
+  font-family: 'Press Start 2P', cursive;
+}
+hr{
+  border-color: #000;
+}
+h1{
+  text-align: center;
+}
+div.containerDrop {
+  width: 90%;
+  margin-left: 10%;
+  margin-top: 75px;
+}
+div#dropzone {
+  width: 87%;
+  height: auto;
+  padding: 15px 5px;
+  border: solid 3px black;
+  overflow: auto;
+  min-height: 75px;
+}
+#pageContainer{
+  padding: 10px 25px;
+}
+#tryto{
+  font-size: 1rem;
+  display: none;
+}
+#imgplus{
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  display: block;
+}
+#dropzone .exempleCol.exrow {
+    max-height: none;
+    height: 50px;
+    display: block;
+    margin-top: 15px;
+    padding: 15px 5px;
+}
+#titre{
+  transition: 1s;
+  font-size: 2rem;
+  margin-top: 5px;
+}
+#titre:hover{
+  transition: 1s;
+  font-size: 3rem;
+}
+#titreInsertCoin{
+  display: inline-block;
+}
+#insertCoin{
+  width: 25px;
+  height: 25px;
+  z-index: 1;
+  position: absolute;
+  margin-top: -27px;
+  transition: 0.7s;
+}
+#insertCoin:hover{
+  transition: 0.7s;
+
+}
+#coinBoxUp{
+  width: 37px;
+  height: 19px;
+  z-index: 0;
+  position: absolute;
+}
+#coinBox{
+  width: 37px;
+  height: 40px;
+  z-index: 2;
+  position: absolute;
+}
+#containerInsertCoin{
+  transition: 0.7s;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 21px;
+  position: absolute;
+}
+#containerCoinBoxUp{
+  transition: 0.7s;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  margin-top: 1px;
+  margin-left: 15px;
+  position: absolute;
+}
+#containerCoinBox{
+  transition: 0.7s;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 15px;
+  position: absolute;
+}
+#dropzone div{
+  display: -webkit-inline-box;
+}
+#outputCode{
+  width: 87%;
+  height: auto;
+  padding: 15px 5px;
+  border: solid 3px black;
+  overflow: auto;
+  display: block;
+}
+#pageContainer{
+
+}
+#myModalManuel ul{
+  list-style: none;
+}
+#myModalManuel span{
+  border: solid 2px black;
+  padding: 5px;
+}
+#myModalManuel li{
+  margin-top: 15px
+}
+#myModalManuel li:first-of-type{
+  margin-top: 0px
+}
+
+#param span{
+  margin-top: 15px;
+}
+.exempleRow > .exempleCol{
+  z-index: 2;
+}
+.exempleCol, .exempleRow {
+    margin: 5px 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #3584fb;
+    border: solid 1px;
+}
+.exempleCol.offset-1, .exempleCol.offset-2,
+.exempleCol.offset-3, .exempleCol.offset-4,
+.exempleCol.offset-5, .exempleCol.offset-6,
+.exempleCol.offset-7, .exempleCol.offset-8,
+.exempleCol.offset-9, .exempleCol.offset-10,
+.exempleCol.offset-11, .exempleCol.offset-12{
+  max-height: 15px;
+  overflow: hidden;
+  background-color: #b2b2b2;
+}
+.exrow {
+    width: 99%;
+    border: 1px black dashed;
+    background-color: transparent !important;
+}
+.button, button{
+  padding: 5px;
+  margin: 5px;
+  border: solid 1px black;
+  cursor: pointer;
+  color: black;
+  text-decoration: none !important;
+  background-color: transparent;
+}
+.button:hover, button:hover{
+  background-color: black;
+  color: white;
+}
+.container{
+  width: 100%;
+  height: auto;
+  display: block !important;
+}

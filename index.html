@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/css.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/rotate.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  </head>
+  <body onkeydown="modeActive();" onkeyup="modeDesactive();">
+    <!-- Large modal -->
+    <!-- The Modal Indentation -->
+    <div id="modalAutoIndent" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Indentation automatique:</h2>
+          </div>
+          <div class="modal-body">
+            <p style="text-align: center;">Petit secret pour indenter du code <a title="Tab-it.fr" href="http://tab-it.fr/" target="_blank">ici</a>
+              ou <a title="freeformatter.html" href="https://www.freeformatter.com/html-formatter.html" target="_blank">ici</a>(Plus professionnel)
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- The Modal Manuel -->
+    <div id="myModalManuel" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Manuel</h2>
+          </div>
+          <div class="modal-body">
+            <p>
+              <ul>
+                <li><span>Backspace</span> --> Supprimer une colonne</li>
+                <li><span>Delete</span> --> Supprimer une une ligne</li>
+                <li><span>insert into row</span> --> cliquez simplement dans le bloc row que vous souhaitez modifier</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- The Modal Credit -->
+    <div id="myModalCredit" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Crédit:</h2>
+          </div>
+          <div class="modal-body">
+            <p>Créateur: Anthony or Defragm</p>
+            <p>Date de création: 19.05.17</p>
+            <p>Version: 0.5</p>
+            <p>But du logiciel: Automatiser le code bootstrap à l'aide du drag and drop html5</p>
+            <br>
+            <h4 id="titreInsertCoin">Insert coin</h4>
+            <div id="containerCoinBoxUp">
+              <img id="coinBoxUp" src="images/coinBoxUp.png" alt="haut de la Boite de coin">
+            </div>
+            <div id="containerCoinBox">
+              <img id="coinBox" src="images/coinBox.png" alt="Boite de coin">
+            </div>
+            <div id="containerInsertCoin">
+              <img id="insertCoin" src="images/insertCoin.png" alt="coin">
+            </div>
+            <br><br>
+            <p>Ce logiciel ne sera pas commercialisé et sera téléchargeable depuis le site <br><a href="">.......</a><br><br>
+              Pour remercier le déveoppement ou  faire un dont voici le lien <br><a href="">.........</a>
+            </p>
+            <p>
+              Font : <a href="https://www.dafont.com/press-start-2p.font">press-start-2p</a>
+            </p>
+          </div>
+          <div class="modal-footer">
+            <h3>Pour contactez le développeur:</h3>
+            <div class="modalfooter"><a href="mailto:Anthony8991@hotmail.com">Anthony8991@hotmail.com</a></div>
+            <br><br>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- modal end credit-->
+    <!-- Small modal -->
+    <!-- The Modal parametre-->
+    <div id="myModalParametre" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 style="font-size: 20px;">Paramètres :</h2>
+          </div>
+          <div id="param" class="modal-body">
+            <!--<h4>Langue :</h4><br>
+              <a id="langFR" class="button" onclick="">Français</a>
+              <a id="langEN" class="button" onclick="">English</a>
+              <hr>-->
+            <h4>Options </h4>
+            <span title="Ajoute une balise body, html et DOCTYPE">Page complète: <input onclick="paramNewPage()" type="checkbox"></span><br>
+            <span title="lie le js et css bootstrap ainsi que jquery">Bootstrap: <input onclick="paramBootstrap()" type="checkbox"></span><br>
+            <span title="Pour mettre votre propre Css">Votre css: <input onclick="paramVotreCss()" type="checkbox"></span><br>
+            <span title="Pour mettre votre propre script">Votre js: <input onclick="paramVotreJs()" type="checkbox"></span><br>
+            <span title="Pour le je ne suis pas une robot google">Recaptcha google: <input onclick="paramApiGoogle()" type="checkbox"></span><br>
+            <span title="Pour le référencement du site">Balise meta: <input onclick="paramMeta()" type="checkbox"></span><br>
+          </div>
+          <div class="modal-footer">
+            <span id="tryto">Try to click -> </span><img id="cog" src="images/cog.png" width="50px" height="50px" alt="cog">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- modal end parametre-->
+    <div id="pageContainer">
+      <h1 id="titre">Bootstrap</h1>
+      <br><br>
+      <!-- Trigger/Open The Modal -->
+      <button type="button" data-toggle="modal" data-target="#myModalCredit">Crédit</button>
+      <button type="button" data-toggle="modal" data-target="#myModalParametre">Paramètres</button>
+      <button type="button" data-toggle="modal" data-target="#myModalManuel">Manuel d'utilisation</button>
+      <br><br>
+      <hr>
+      <br>
+      <!-- Bloc d'élément dragable -->
+      <div id="bootstrap" class="container">
+        <div class="row">
+          <div id="rowexemple" class="exempleRow exrow" draggable="true" ondragstart="drag(event)">row</div>
+        </div>
+        <div class="row">
+          <div id="col1exemple" class="exempleCol col-xs-1" draggable="true" ondragstart="drag(event)">Col 1</div>
+        </div>
+        <div class="row">
+          <div id="col2exemple" class="exempleCol col-xs-2" draggable="true" ondragstart="drag(event)">Col 2</div>
+        </div>
+        <div class="row">
+          <div id="col3exemple" class="exempleCol col-xs-3" draggable="true" ondragstart="drag(event)">Col 3</div>
+        </div>
+        <div class="row">
+          <div id="col4exemple" class="exempleCol col-xs-4" draggable="true" ondragstart="drag(event)">Col 4</div>
+        </div>
+        <div class="row">
+          <div id="col5exemple" class="exempleCol col-xs-5" draggable="true" ondragstart="drag(event)">Col 5</div>
+        </div>
+        <div class="row">
+          <div id="col6exemple" class="exempleCol col-xs-6" draggable="true" ondragstart="drag(event)">Col 6</div>
+        </div>
+        <div class="row">
+          <div id="col7exemple" class="exempleCol col-xs-7" draggable="true" ondragstart="drag(event)">Col 7</div>
+        </div>
+        <div class="row">
+          <div id="col8exemple" class="exempleCol col-xs-8" draggable="true" ondragstart="drag(event)">Col 8</div>
+        </div>
+        <div class="row">
+          <div id="col9exemple" class="exempleCol col-xs-9" draggable="true" ondragstart="drag(event)">Col 9</div>
+        </div>
+        <div class="row">
+          <div id="col10exemple" class="exempleCol col-xs-10" draggable="true" ondragstart="drag(event)">Col 10</div>
+        </div>
+        <div class="row">
+          <div id="col11exemple" class="exempleCol col-xs-11" draggable="true" ondragstart="drag(event)">Col 11</div>
+        </div>
+        <div class="row">
+          <div id="col12exemple" class="exempleCol col-xs-12" draggable="true" ondragstart="drag(event)">Col 12</div>
+        </div>
+      </div>
+      <!--<div id="bootstrapOffset" class="container">
+        <div class="row">
+          <div id="offset1exemple" class="exempleCol col-xs-offset-1" draggable="true" ondragstart="drag(event)">offset 1</div>
+        </div>
+        <div class="row">
+          <div id="offset2exemple" class="exempleCol col-xs-offset-2" draggable="true" ondragstart="drag(event)">offset 2</div>
+        </div>
+        <div class="row">
+          <div id="offset3exemple" class="exempleCol col-xs-offset-3" draggable="true" ondragstart="drag(event)">offset 3</div>
+        </div>
+        <div class="row">
+          <div id="offset4exemple" class="exempleCol col-xs-offset-4" draggable="true" ondragstart="drag(event)">offset 4</div>
+        </div>
+        <div class="row">
+          <div id="offset5exemple" class="exempleCol col-xs-offset-5" draggable="true" ondragstart="drag(event)">offset 5</div>
+        </div>
+        <div class="row">
+          <div id="offset6exemple" class="exempleCol col-xs-offset-6" draggable="true" ondragstart="drag(event)">offset 6</div>
+        </div>
+        <div class="row">
+          <div id="offset7exemple" class="exempleCol col-xs-offset-7" draggable="true" ondragstart="drag(event)">offset 7</div>
+        </div>
+        <div class="row">
+          <div id="offset8exemple" class="exempleCol col-xs-offset-8" draggable="true" ondragstart="drag(event)">offset 8</div>
+        </div>
+        <div class="row">
+          <div id="offset9exemple" class="exempleCol col-xs-offset-9" draggable="true" ondragstart="drag(event)">offset 9</div>
+        </div>
+        <div class="row">
+          <div id="offset10exemple" class="exempleCol col-xs-offset-10" draggable="true" ondragstart="drag(event)">offset 10</div>
+        </div>
+        <div class="row">
+          <div id="offset11exemple" class="exempleCol col-xs-offset-11" draggable="true" ondragstart="drag(event)">offset 11</div>
+        </div>
+        <div class="row">
+          <div id="offset12exemple" class="exempleCol col-xs-offset-12" draggable="true" ondragstart="drag(event)">offset 12</div>
+        </div>
+        </div>-->
+      <!-- Zone de drop -->
+      <div class="containerDrop">
+        <div id="dropzone" title="Glisser Les éléments dans ce conteneur" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <img id="imgplus" src="images/plus.svg" alt="image pour ajouter du contenu">
+        </div>
+      </div>
+      <div class="containerDrop">
+        <div style=" width: 87%; text-align: center;">
+          <a data-toggle="modal" data-target="#modalAutoIndent" style="font-size: 2rem;" onclick="codewrite()" class="button" id="codeCopy">Obtenir le code</a>
+        </div>
+      </div>
+      <!-- Zone de sortie du code -->
+      <div class="containerDrop">
+        <p id="outputCode">Votre code sortira ici...</p>
+      </div>
+    </div>
+    <script src="js/monjs.js"></script>
+  </body>
+</html>
